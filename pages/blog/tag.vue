@@ -1,6 +1,6 @@
 <template>
   <div>
-    <template v-if="posts.length">
+    <template v-if="posts">
       <div class="section has-background-primary">
         <div class="content">
           <h1
