@@ -3,14 +3,13 @@ export default {
   mode: 'universal',
 
   target: 'static',
-  /*
-  ** Headers of the page
-  */
+  
   vue: {
     config: {
       devtools:true
     }
   },
+
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -97,5 +96,9 @@ export default {
     */
     extend(config, ctx) {
     }
+  },
+
+  generate: {
+    fallback: '404.html'
   }
 }
