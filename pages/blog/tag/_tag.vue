@@ -64,9 +64,9 @@ import Media from "~/components/UI/Media";
 export default {
   components: { Media },
 
-  async asyncData({ $prismic, query, error }) {
+  async asyncData({ $prismic, params, error }) {
     try {
-      const tag = query.name;
+      const tag = params.tag;
 
       const { results } = await $prismic.api.query(
         $prismic.predicates.at("document.tags", [tag])

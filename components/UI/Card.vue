@@ -15,7 +15,7 @@
       </h3>
       <b-taglist>
         <nuxt-link class="tag is-primary" v-for="tag in post.tags" :key="tag"
-          :to="{name:'blog-tag', query: { name: tag }}"
+          :to="{name:'blog-tag-tag', params: { tag }}"
         >{{ tag }}</nuxt-link>
       </b-taglist>
       <p class="is-italic has-text-grey">by {{ post.data.author_link.data.name }}</p>
