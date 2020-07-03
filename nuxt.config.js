@@ -77,6 +77,7 @@ export default {
 
   prismic: {
     endpoint: 'https://blogjovemprogramador.cdn.prismic.io/api/v2',
+    preview: false
   },
   /*
   ** Build configuration
