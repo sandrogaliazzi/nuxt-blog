@@ -6,7 +6,7 @@
           <div class="column">
             <div class="image-whrapper">
               <figure class="image">
-                <img class="is-rounded" width="400px" src="/eu.jpg" alt="sobre mim" />
+                <img class="is-rounded" width="400px" src="/eu.jpg" />
               </figure>
             </div>
             <div class="section">
@@ -35,7 +35,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  head(){
+    return {
+      title:'Sobre'
+    }
+  }
+};
 </script>
 
 <style>

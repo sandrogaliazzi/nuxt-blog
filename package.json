@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-test",
+  "name": "blog-jovem-progrmador",
   "version": "1.0.0",
-  "description": "My best Nuxt.js project",
+  "description": "Jovem Programador é um blog para compartilhar conhecimentos sobre o vasto mundo da programação, sobretudo o mundo do Frontend, trazendo uma série de tutorias e posts que com certeza vão te ajudar a ser tornar um programador melhor",
   "author": "sandro",
   "private": true,
   "scripts": {

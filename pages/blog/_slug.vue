@@ -119,6 +119,14 @@ import Slice from "~/components/templating/Slice";
 export default {
   components: { Card, Slice },
 
+  head() {
+    return {
+      title: this.$prismic.asText(this.post.data.title),
+
+      meta: [{ name: "description", content: this.post.data.description }]
+    };
+  },
+
   async asyncData({ $prismic, params, error }) {
     try {
       const post = await $prismic.api.getByUID("blog_post", params.slug, {
@@ -134,7 +142,10 @@ export default {
       };
 
       const { results } = await $prismic.api.query(
-        $prismic.predicates.any("document.tags", post.tags),
+        [
+          $prismic.predicates.similar(post.id, 3),
+          $prismic.predicates.at("document.type", "blog_post")
+        ],
         { fetchLinks: "author.name", pageSize: 3 }
       );
 

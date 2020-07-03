@@ -22,12 +22,14 @@
                   </figure>
                 </div>
                 <div class="media-content">
-                  <p class="is-size-4 has-text-weight">{{props.option.data.title}}</p>
-                  <p>{{props.option.data.description}}</p>
+                  <p class="is-size-4">
+                    {{ $prismic.asText(props.option.data.title) }}
+                  </p>
+                  <p>{{ props.option.data.description }}</p>
                 </div>
               </div>
             </template>
-            <template v-if="isEmptyResults" #empty>
+            <template #empty>
               <p>
                 <strong>Desculpe, nenhum resultado encontrado</strong>
               </p>
@@ -44,34 +46,28 @@ export default {
   data() {
     return {
       data: [],
-      isLoading: false,
-      isEmptyResults: false
+      isLoading: false
     };
   },
 
   methods: {
     async getPostResults(searchText) {
-      this.isLoading = true
+      this.isLoading = true;
       try {
         const { results } = await this.$prismic.api.query([
-          this.$prismic.predicates.at('document.type', 'blog_post'),
-          this.$prismic.predicates.fulltext('document', searchText)
-        ])
-        if (!results.length) {
-          this.isEmptyResults = true
-        } else {
-          this.data = results
-          this.isEmptyResults = false
-        }
+          this.$prismic.predicates.at("document.type", "blog_post"),
+          this.$prismic.predicates.fulltext("document", searchText)
+        ]);
+
+        if (results.length) this.data = results;
       } catch (e) {
-        this.data = []
+        this.data = [];
       } finally {
-        this.isLoading = false
+        this.isLoading = false;
       }
     }
   }
 };
 </script>
 
-<style>
-</style>
+<style></style>

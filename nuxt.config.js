@@ -11,7 +11,7 @@ export default {
   },
 
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Jovem Programador',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -39,12 +39,6 @@ export default {
   plugins: [
     '~/plugins/utils',
     '~/plugins/disqus',
-  ],
-  /*
-  ** Nuxt.js dev-modules
-  */
-  buildModules: [
-
   ],
   /*
   ** Nuxt.js modules
@@ -80,10 +74,7 @@ export default {
     }],
     'vue-social-sharing/nuxt'
   ],
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
+
   prismic: {
     endpoint: 'https://blogjovemprogramador.cdn.prismic.io/api/v2',
   },

@@ -1,5 +1,11 @@
 <template>
-  <b-navbar transparent wrapper-class="container" class="shadow" fixed-top type="is-light">
+  <b-navbar
+    transparent
+    wrapper-class="container"
+    class="shadow"
+    fixed-top
+    type="is-light"
+  >
     <template slot="brand">
       <b-navbar-item tag="nuxt-link" :to="{ path: '/' }">
         <span class="nav-brand">
@@ -12,11 +18,11 @@
       <b-navbar-item
         tag="nuxt-link"
         class="nav-item"
-        :to="link.path"
         v-for="link in links"
         :key="link.name"
+        :to="{name: link.routeName, params:link.params}"
       >
-        {{link.name}}
+        {{ link.linkName }}
       </b-navbar-item>
     </template>
   </b-navbar>
@@ -27,8 +33,10 @@ export default {
   data() {
     return {
       links: [
-        { path: "/", name: "Home" },
-        { path: "/about", name: "About" },
+        { routeName: "index", params: {}, linkName: "Home" },
+        { routeName: "blog-tag-tag", params: {tag:"css"}, linkName: "css" },
+        { routeName: "blog-tag-tag", params: {tag:"vue"}, linkName: "Vue" },
+        { routeName: "About", params: {}, linkName: "sobre" }
       ]
     };
   }
@@ -44,16 +52,15 @@ export default {
 .nav-item {
   font-family: "Montserrat";
   font-weight: 500;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .nav-item:hover {
   font-weight: 600;
-  color: #7956D4 !important
+  color: #7956d4 !important;
 }
 
 .shadow {
-  box-shadow: 0px 10px 17px -8px rgba(0,0,0,0.6);
+  box-shadow: 0px 10px 17px -8px rgba(0, 0, 0, 0.6);
 }
-
 </style>
