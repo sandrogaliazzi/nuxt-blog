@@ -4,7 +4,7 @@
       <div class="columns is-multiline">
         <template v-if="error.statusCode === 404">
           <div class="column is-12 is-flex center">
-            <img src="404.png" width="600" alt="404 página não encontrada" />
+            <img src="/404.png" width="600" alt="404 página não encontrada" />
             <h1 class="title has-text-centered has-text-grey is-size-1">
               <h1>Página não encontrada</h1>
             </h1>
@@ -35,6 +35,12 @@
 export default {
   props: {
     error: Object
+  },
+
+  head(){
+    return {
+      title: "Oops, algo aconteceu errado"
+    }
   },
 
   layout: "errorLayout",

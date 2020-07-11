@@ -18,7 +18,7 @@
       <div class="section">
         <div class="columns">
           <div class="column">
-            <Media v-for="post in posts" :key="post.id" :post="post" />
+            <Media class="mt-4" v-for="post in posts" :key="post.id" :post="post" />
           </div>
         </div>
       </div>
@@ -64,6 +64,15 @@ import Media from "~/components/UI/Media";
 export default {
   components: { Media },
 
+  head(){
+    return {
+      title: `${this.tag}-jovemProgramador`,
+      meta: [
+        {name: "description", content: `todos os posts sobre ${this.tag}`}
+      ]
+    }
+  },
+
   async asyncData({ $prismic, params, error }) {
     try {
       const tag = params.tag;
@@ -82,11 +91,3 @@ export default {
   }
 };
 </script>
-<style>
-/* .is-empty {
-  background-image: url("/sad.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-} */
-</style>

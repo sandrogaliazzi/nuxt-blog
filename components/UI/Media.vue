@@ -24,7 +24,10 @@
         </b-taglist>
         <small
           ><p class="is-italic">
-            {{ formatDate(post.first_publication_date) }}
+            por {{ post.data.author_link.data.name }}
+            <time :datetime="post.first_publication_date">
+              {{formatDate(post.first_publication_date)}}
+            </time>
           </p></small
         >
       </div>

@@ -13,18 +13,20 @@
               <div class="content has-text-centered">
                 <h1 class="title">Sobre mim</h1>
                 <p>
-                Lorem ipsum dolor, 
-                sit amet consectetur adipisicing elit. Quidem voluptas illo quos totam, 
-                sint earum ab odit voluptatibus voluptatum nisi debitis dicta aliquam dolor
-                 magnam in a quae dolore labore. Incidunt doloremque debitis tempore facilis 
-                 animi fugiat vero repellat quas fugit. Qui dicta quam, vero eius sapiente 
-                 impedit, at deserunt nobis reiciendis vel veniam esse exercitationem. 
-                 Minima accusamus aliquid nostrum incidunt sunt. Nisi obcaecati, 
-                 laborum voluptatum illo eaque itaque expedita libero unde rerum non 
-                 placeat quia ex atque hic minus possimus iste assumenda voluptas neque ab. 
-                 Corporis reprehenderit fugiat deleniti asperiores ducimus aspernatur 
-                 cupiditate, provident consectetur doloremque soluta perspiciatis optio!
-                 </p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Quidem voluptas illo quos totam, sint earum ab odit
+                  voluptatibus voluptatum nisi debitis dicta aliquam dolor
+                  magnam in a quae dolore labore. Incidunt doloremque debitis
+                  tempore facilis animi fugiat vero repellat quas fugit. Qui
+                  dicta quam, vero eius sapiente impedit, at deserunt nobis
+                  reiciendis vel veniam esse exercitationem. Minima accusamus
+                  aliquid nostrum incidunt sunt. Nisi obcaecati, laborum
+                  voluptatum illo eaque itaque expedita libero unde rerum non
+                  placeat quia ex atque hic minus possimus iste assumenda
+                  voluptas neque ab. Corporis reprehenderit fugiat deleniti
+                  asperiores ducimus aspernatur cupiditate, provident
+                  consectetur doloremque soluta perspiciatis optio!
+                </p>
               </div>
             </div>
           </div>
@@ -36,10 +38,17 @@
 
 <script>
 export default {
-  head(){
+  head() {
     return {
-      title:'Sobre'
-    }
+      title: "Sobre mim",
+      meta: [
+        {
+          name: "description",
+          content:
+            "sit amet consectetur adipisicing elit. Quidem voluptas illo quos totam"
+        }
+      ]
+    };
   }
 };
 </script>

@@ -17,7 +17,7 @@
     <template slot="end">
       <b-navbar-item
         tag="nuxt-link"
-        class="nav-item"
+        class="nav-item headline"
         v-for="link in links"
         :key="link.name"
         :to="{name: link.routeName, params:link.params}"

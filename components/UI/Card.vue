@@ -18,11 +18,11 @@
           :to="{name:'blog-tag-tag', params: { tag }}"
         >{{ tag }}</nuxt-link>
       </b-taglist>
-      <p class="is-italic has-text-grey">by {{ post.data.author_link.data.name }}</p>
+      <p class="is-italic has-text-grey">por {{ post.data.author_link.data.name }}</p>
       <small>
         <time class="has-text-grey">
           <icon icon="clock" size="sm" />
-          Published at {{ formatDate(post.first_publication_date) }}
+          {{ formatDate(post.first_publication_date) }}
         </time>
       </small>
     </div>

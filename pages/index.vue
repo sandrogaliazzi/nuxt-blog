@@ -2,10 +2,10 @@
   <div>
     <section class="section svg-background-container">
       <search-bar />
-      <h2 class="title is-size-1 is-size-3-mobile  has-text-white">
+      <h1 class="title is-size-1 is-size-3-mobile  has-text-white">
         Destaque
         <icon icon="bolt" />
-      </h2>
+      </h1>
       <div class="container">
         <div class="columns is-multiline">
           <div
@@ -19,13 +19,17 @@
       </div>
     </section>
     <section class="section recent-posts has-background-light">
-      <h3 class="title is-size-1 is-size-3-mobile">
+      <h2 class="title is-size-1 is-size-3-mobile">
         Posts Recentes
         <icon icon="meteor" />
-      </h3>
+      </h2>
       <div class="container is-fluid">
         <div class="columns is-multiline">
-          <div class="column is-12" v-for="post in recentPosts" :key="post.slug">
+          <div
+            class="column is-12"
+            v-for="post in recentPosts"
+            :key="post.slug"
+          >
             <Media :post="post" />
           </div>
         </div>
@@ -59,9 +63,22 @@ export default {
     SearchBar
   },
 
+  head() {
+    return {
+      title: "blog jovemProgramador",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Jovem Programador é um blog para compartilhar conhecimentos sobre o vasto mundo da programação, sobretudo o mundo do Frontend, trazendo uma série de tutorias e posts que com certeza vão te ajudar a ser tornar um programador melhor"
+        }
+      ]
+    };
+  },
+
   data() {
     return {
-      page: 1,
+      page: 1
     };
   },
 
