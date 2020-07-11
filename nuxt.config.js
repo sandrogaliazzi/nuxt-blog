@@ -33,7 +33,8 @@ export default {
   */
   css: [
     '~/assets/css/typo.css',
-    '~/assets/css/spacing.css'
+    '~/assets/css/spacing.css',
+    '~/assets/css/utils.css'
   ],
   /*
   ** Plugins to load before mounting the App

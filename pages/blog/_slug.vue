@@ -170,13 +170,6 @@ export default {
 };
 </script>
 <style>
-.hero-img {
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
 .related-posts {
   background: #8e2de2; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -189,16 +182,5 @@ export default {
     #4a00e0,
     #8e2de2
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.overlay {
-  background-color: rgba(0, 0, 0, 0.45);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.pos-relative {
-  position: relative;
 }
 </style>

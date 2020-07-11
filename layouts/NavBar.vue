@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="navbar is-transparent is-fixed-top shadow"
+    class="navbar is-transparent shadow"
     role="navigation"
     aria-label="main navigation"
   >
@@ -16,7 +16,7 @@
         role="button"
         class="navbar-burger burger"
         aria-label="menu"
-        :aria-expanded="isOpen"
+        aria-expanded="false"
         data-target="navbar-menu-toggle"
         :class="{ 'is-active': isOpen }"
         @click="isOpen = !isOpen"
@@ -43,7 +43,7 @@
             icon-clickable
             rounded
             :loading="isLoading"
-            style="width:80%"
+            style="width:70%"
           >
             <template slot-scope="props">
               <div class="content">
@@ -114,9 +114,6 @@ export default {
 </script>
 
 <style>
-.nav-brand {
-  font-family: "Fjalla One";
-}
 
 .nav-item {
   transition: all 0.5s ease;
