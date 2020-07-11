@@ -123,7 +123,20 @@ export default {
     return {
       title: this.$prismic.asText(this.post.data.title),
 
-      meta: [{ name: "description", content: this.post.data.description }]
+      meta: [
+        { name: "description", content: this.post.data.description },
+        {property: "og:title", content: this.$prismic.asText(this.post.data.title)},
+        {property: "og:type" , content: "article"},
+        {property: "og:description", content: this.post.data.description},
+        {property: "og:image", content: this.post.data.hero.url},
+        {property: "og:url", content: route.fullPath},
+        {property: "og:site_name", content: "Jovem Programador blog"},
+        {name: "twitter:card", content: "summary"},
+        {name: "twitter:url", content: route.fullPath},
+        {name: "twitter:title", content: this.$prismic.asText(this.post.data.title)},
+        {name: "twitter:description", content: this.post.data.description},
+        {name: "twitter:image", content: this.post.data.url},
+      ]
     };
   },
 
