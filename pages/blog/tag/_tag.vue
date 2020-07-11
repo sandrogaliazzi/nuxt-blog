@@ -78,7 +78,10 @@ export default {
       const tag = params.tag;
 
       const { results } = await $prismic.api.query(
-        $prismic.predicates.at("document.tags", [tag])
+        [
+          $prismic.predicates.at("document.type", "blog_post"),
+          $prismic.predicates.at("document.tags", [tag])
+        ], {fetchLinks: "author.name"}
       );
 
       return {
