@@ -1,7 +1,7 @@
 <template>
   <div>
     <template v-if="posts">
-      <div class="section has-background-primary">
+      <div class="section has-background-primary mt-6">
         <div class="content">
           <h1
             style="mt-6"

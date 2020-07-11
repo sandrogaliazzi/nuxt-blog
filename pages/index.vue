@@ -1,7 +1,80 @@
 <template>
   <div>
+    <!-- <div
+      class="hero hero-img is-large"
+      :style="{ backgroundImage: `url(${featuredPosts[1].data.hero.url})` }"
+    >
+      <div class="overlay"></div>
+      <div class="section">
+        <div class="container">
+          <div class="columns">
+            <div
+              class="column is-6-desktop is-8-tablet is-flex py-6"
+              style="align-items:center"
+            >
+              <div class="content">
+                <h1
+                  class="title is-size-1-desktop is-size-3-mobile has-text-white"
+                >
+                  Post principal com destaque
+                </h1>
+                <p class="subtitle has-text-white">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Ipsam odio, officiis eius repellat sed quaerat culpa
+                  perspiciatis reprehenderit blanditiis ea.
+                </p>
+                <b-taglist>
+                  <b-tag type="is-primary">post</b-tag>
+                  <b-tag type="is-primary">demo</b-tag>
+                  <b-tag type="is-primary">web</b-tag>
+                </b-taglist>
+                <p>
+                  Por <strong>Sandro Galiazzi</strong>
+                  {{ formatDate(featuredPosts[0].first_publication_date) }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div
+      class="hero is-medium hero-img"
+      :style="{ backgroundImage: `url(${featuredPosts[1].data.hero.url})` }"
+    >
+      <div class="overlay"></div>
+
+      <div class="hero-body has-text-white">
+        <div class="container is-relative">
+          <div class="columns">
+            <div class="column is-6-desktop is-8-tablet">
+              <div class="content">
+                <h1 class="title is-size-1-desktop has-text-white">
+                Post principar com destaque
+              </h1>
+              <p class="sub-title is-size-4-desktop">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam
+                odio, officiis eius repellat sed quaerat culpa perspiciatis
+                reprehenderit blanditiis ea.
+              </p>
+               <b-taglist>
+                  <b-tag type="is-primary">post</b-tag>
+                  <b-tag type="is-primary">demo</b-tag>
+                  <b-tag type="is-primary">web</b-tag>
+                </b-taglist>
+                 <p>
+                  Por Sandro Galiazzi
+                  {{ formatDate(featuredPosts[0].first_publication_date) }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <section class="section svg-background-container">
-      <search-bar />
+      <!-- <search-bar /> -->
+
       <h1 class="title is-size-1 is-size-3-mobile  has-text-white">
         Destaque
         <icon icon="bolt" />
