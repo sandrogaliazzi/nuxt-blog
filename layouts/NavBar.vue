@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="navbar is-transparent shadow"
+    class="navbar is-transparent is-fixed-top shadow"
     role="navigation"
     aria-label="main navigation"
   >
@@ -65,7 +65,7 @@
 
       <div class="navbar-end">
         <nuxt-link
-          class="navbar-item"
+          class="navbar-item heading is-size-6"
           v-for="link in links"
           :key="link.name"
           :to="{ name: link.routeName, params: link.params }"

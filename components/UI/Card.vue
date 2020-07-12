@@ -13,7 +13,8 @@
       <h3 class="title is-size-4">
         {{ $prismic.asText(post.data.title) }}
       </h3>
-      <b-taglist>
+      <div class="is-hidden-mobile">
+        <b-taglist>  
         <nuxt-link class="tag is-primary" v-for="tag in post.tags" :key="tag"
           :to="{name:'blog-tag-tag', params: { tag }}"
         >{{ tag }}</nuxt-link>
@@ -25,6 +26,7 @@
           {{ formatDate(post.first_publication_date) }}
         </time>
       </small>
+      </div>
     </div>
   </nuxt-link>
 </template>

@@ -85,7 +85,7 @@
       </div>
 
       <!-- posts relacionados -->
-      <footer class="section related-posts">
+      <footer class="section gradient-purple">
         <h3
           class="title is-size-2 is-size-3-mobile has-text-centered has-text-white"
         >
@@ -170,7 +170,7 @@ export default {
 };
 </script>
 <style>
-.related-posts {
+.gradient-purple {
   background: #8e2de2; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,

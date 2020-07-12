@@ -1,39 +1,45 @@
 <template>
   <div>
-    <div
-      class="hero is-medium hero-img"
-      :style="{ backgroundImage: `url(${featuredPosts[1].data.hero.url})` }"
-    >
-      <div class="overlay"></div>
+    <div class="hero is-medium gradient-purple">
       <div class="hero-body has-text-white">
-        <div class="container is-relative">
+        <div class="container">
           <div class="columns">
             <div class="column is-6-desktop is-8-tablet">
               <div class="content">
                 <h1 class="title is-size-1-desktop has-text-white">
-                Post principal com destaque
-              </h1>
-              <p class="sub-title is-size-4-desktop">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam
-                odio, officiis eius repellat sed quaerat culpa perspiciatis
-                reprehenderit blanditiis ea.
-              </p>
-               <b-taglist>
+                  Post principal com destaque
+                </h1>
+                <p class="sub-title is-size-4-desktop">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Ipsam odio, officiis eius repellat sed quaerat culpa
+                  perspiciatis reprehenderit blanditiis ea.
+                </p>
+                <b-taglist>
                   <b-tag type="is-primary">post</b-tag>
                   <b-tag type="is-primary">demo</b-tag>
                   <b-tag type="is-primary">web</b-tag>
                 </b-taglist>
-                 <p>
+                <p>
                   Por Sandro Galiazzi
                   {{ formatDate(featuredPosts[0].first_publication_date) }}
                 </p>
               </div>
             </div>
+            <div class="column is-hidden-mobile">
+              <figure class="image">
+                <img
+                  class="rounded"
+                  width="300"
+                  :src="featuredPosts[1].data.hero.url"
+                  alt=""
+                />
+              </figure>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <section class="section svg-background-container">
+    <section class="section gradient-pink">
       <h1 class="title is-size-1 is-size-3-mobile  has-text-white">
         Destaque
         <icon icon="bolt" />
@@ -50,7 +56,7 @@
         </div>
       </div>
     </section>
-    <section class="section recent-posts has-background-light">
+    <section class="section recent-posts">
       <h2 class="title is-size-1 is-size-3-mobile">
         Posts Recentes
         <icon icon="meteor" />
@@ -181,5 +187,19 @@ export default {
 .load-btn-whrapper {
   display: flex;
   justify-content: center;
+}
+
+.gradient-pink {
+  background: #ec008c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fc6767,
+    #ec008c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #fc6767,
+    #ec008c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 </style>
