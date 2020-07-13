@@ -62,7 +62,7 @@
                     <ShareNetwork
                       network="facebook"
                       tag="div"
-                      :url="$route.fullPath"
+                      :url="window.location.href"
                       :title="$prismic.asText(post.data.title)"
                       :description="post.data.description"
                       :hashtags="post.tags.join(',')"
@@ -72,7 +72,7 @@
                     <ShareNetwork
                       network="whatsapp"
                       tag="div"
-                      :url="$route.fullPath"
+                      :url="window.location.href"
                       :title="$prismic.asText(post.data.title)"
                       :description="post.data.description"
                     >
@@ -81,7 +81,7 @@
                     <ShareNetwork
                       network="twitter"
                       tag="div"
-                      :url="$route.fullPath"
+                      :url="window.location.href"
                       :title="$prismic.asText(post.data.title)"
                       :hashtags="post.tags.join(',')"
                     >
