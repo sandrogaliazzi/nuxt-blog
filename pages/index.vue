@@ -4,41 +4,53 @@
       <div class="hero-body has-text-white">
         <div class="container">
           <div class="columns">
-            <div class="column is-6-desktop is-8-tablet">
-              <div class="content">
+            <div class="column is-6-desktop">
+              <div class="content has-background-grey-dark py-5 px-5">
                 <h1 class="title is-size-1-desktop has-text-white">
                   Post principal com destaque
                 </h1>
-                <p class="sub-title is-size-4-desktop">
+                <p class="subtitle has-text-white is-size-4-desktop">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Ipsam odio, officiis eius repellat sed quaerat culpa
                   perspiciatis reprehenderit blanditiis ea.
                 </p>
-                <b-taglist>
-                  <b-tag type="is-primary">post</b-tag>
-                  <b-tag type="is-primary">demo</b-tag>
-                  <b-tag type="is-primary">web</b-tag>
-                </b-taglist>
                 <p>
                   Por Sandro Galiazzi
                   {{ formatDate(featuredPosts[0].first_publication_date) }}
                 </p>
+                <b-button type="is-primary">Ler mais</b-button> 
               </div>
             </div>
-            <div class="column is-hidden-mobile">
-              <figure class="image">
-                <img
-                  class="rounded"
-                  width="300"
-                  :src="featuredPosts[1].data.hero.url"
-                  alt=""
-                />
-              </figure>
+            <div class="column">
+              <p class="title has-text-white">Encontre o seu assunto <icon icon="bookmark" /></p>
+              <div class="box">
+                <b-taglist>
+                  <b-tag type="is-primary" size="is-large">post</b-tag>
+                  <b-tag type="is-primary" size="is-large">demo</b-tag>
+                  <b-tag type="is-primary" size="is-large">web</b-tag>
+                  <b-tag type="is-primary" size="is-large">javaScript</b-tag>
+                  <b-tag type="is-primary" size="is-large">firebase</b-tag>
+                  <b-tag type="is-primary" size="is-large">JamStack</b-tag>
+                  <b-tag type="is-primary" size="is-large">blog</b-tag>
+                  <b-tag type="is-primary" size="is-large">css</b-tag>
+                  <b-tag type="is-primary" size="is-large">html</b-tag>
+                  <b-tag type="is-primary" size="is-large">Vue</b-tag>
+                  <b-tag type="is-primary" size="is-large">frontend</b-tag>
+                  <b-tag type="is-primary" size="is-large">design</b-tag>
+                  <b-tag type="is-primary" size="is-large">cms</b-tag>
+                </b-taglist>
+              </div>
+              <p class="title has-text-white pt-5">
+                <icon icon="search" /> 
+                Ou faça uma busca aqui
+              </p>
+              <search-bar />
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- pots destacados -->
     <section class="section gradient-pink">
       <h1 class="title is-size-1 is-size-3-mobile  has-text-white">
         Destaque
@@ -56,6 +68,7 @@
         </div>
       </div>
     </section>
+    <!-- posts recentes -->
     <section class="section recent-posts">
       <h2 class="title is-size-1 is-size-3-mobile">
         Posts Recentes
@@ -178,28 +191,8 @@ export default {
 };
 </script>
 <style>
-.svg-background-container {
-  background-attachment: fixed;
-  background-image: url("/svg/Rainbow-Vortex.svg");
-  background-size: cover;
-}
-
 .load-btn-whrapper {
   display: flex;
   justify-content: center;
-}
-
-.gradient-pink {
-  background: #ec008c; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #fc6767,
-    #ec008c
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #fc6767,
-    #ec008c
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 </style>

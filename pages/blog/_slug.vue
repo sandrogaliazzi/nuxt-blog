@@ -59,9 +59,34 @@
               <div class="level-right">
                 <div class="level-item">
                   <div class="is-flex">
-                    <icon :icon="['fab', 'facebook-square']" size="2x" />
-                    <icon :icon="['fab', 'whatsapp']" size="2x" class="mx-4" />
-                    <icon :icon="['fab', 'twitter']" size="2x" />
+                    <ShareNetwork
+                      network="facebook"
+                      tag="div"
+                      :url="$route.fullPath"
+                      :title="$prismic.asText(post.data.title)"
+                      :description="post.data.description"
+                      :hashtags="post.tags.join(',')"
+                    >
+                      <icon :icon="['fab', 'facebook-square']" size="2x" />
+                    </ShareNetwork>
+                    <ShareNetwork
+                      network="whatsapp"
+                      tag="div"
+                      :url="$route.fullPath"
+                      :title="$prismic.asText(post.data.title)"
+                      :description="post.data.description"
+                    >
+                      <icon :icon="['fab', 'whatsapp']" size="2x" class="mx-4" />
+                    </ShareNetwork>
+                    <ShareNetwork
+                      network="twitter"
+                      tag="div"
+                      :url="$route.fullPath"
+                      :title="$prismic.asText(post.data.title)"
+                      :hashtags="post.tags.join(',')"
+                    >
+                      <icon :icon="['fab', 'twitter']" size="2x" />
+                    </ShareNetwork>
                   </div>
                 </div>
               </div>
@@ -125,17 +150,23 @@ export default {
 
       meta: [
         { name: "description", content: this.post.data.description },
-        {property: "og:title", content: this.$prismic.asText(this.post.data.title)},
-        {property: "og:type" , content: "article"},
-        {property: "og:description", content: this.post.data.description},
-        {property: "og:image", content: this.post.data.hero.url},
-        {property: "og:url", content: this.$route.fullPath},
-        {property: "og:site_name", content: "Jovem Programador blog"},
-        {name: "twitter:card", content: "summary"},
-        {name: "twitter:url", content: this.$route.fullPath},
-        {name: "twitter:title", content: this.$prismic.asText(this.post.data.title)},
-        {name: "twitter:description", content: this.post.data.description},
-        {name: "twitter:image", content: this.post.data.url},
+        {
+          property: "og:title",
+          content: this.$prismic.asText(this.post.data.title)
+        },
+        { property: "og:type", content: "article" },
+        { property: "og:description", content: this.post.data.description },
+        { property: "og:image", content: this.post.data.hero.url },
+        { property: "og:url", content: this.$route.fullPath },
+        { property: "og:site_name", content: "Jovem Programador blog" },
+        { name: "twitter:card", content: "summary" },
+        { name: "twitter:url", content: this.$route.fullPath },
+        {
+          name: "twitter:title",
+          content: this.$prismic.asText(this.post.data.title)
+        },
+        { name: "twitter:description", content: this.post.data.description },
+        { name: "twitter:image", content: this.post.data.url }
       ]
     };
   },
@@ -169,18 +200,4 @@ export default {
   }
 };
 </script>
-<style>
-.gradient-purple {
-  background: #8e2de2; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #4a00e0,
-    #8e2de2
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #4a00e0,
-    #8e2de2
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-</style>
+<style></style>
