@@ -62,7 +62,7 @@
                     <ShareNetwork
                       network="facebook"
                       tag="div"
-                      :url="window.location.href"
+                      :url="url"
                       :title="$prismic.asText(post.data.title)"
                       :description="post.data.description"
                       :hashtags="post.tags.join(',')"
@@ -72,7 +72,7 @@
                     <ShareNetwork
                       network="whatsapp"
                       tag="div"
-                      :url="window.location.href"
+                      :url="url"
                       :title="$prismic.asText(post.data.title)"
                       :description="post.data.description"
                     >
@@ -81,7 +81,7 @@
                     <ShareNetwork
                       network="twitter"
                       tag="div"
-                      :url="window.location.href"
+                      :url="url"
                       :title="$prismic.asText(post.data.title)"
                       :hashtags="post.tags.join(',')"
                     >
@@ -169,6 +169,12 @@ export default {
         { name: "twitter:image", content: this.post.data.url }
       ]
     };
+  },
+
+  computed: {
+    url() {
+      return window.location.href
+    }
   },
 
   async asyncData({ $prismic, params, error }) {
